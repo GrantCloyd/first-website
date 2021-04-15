@@ -1,5 +1,66 @@
+html {
+    font-size: 20px;
+}
+
 body {
-    background: blue;
-    color: white;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    background: #000000;
+background: -moz-linear-gradient(left, #000000 0%, #114466 50%, #185F8F 100%);
+background: -webkit-linear-gradient(left, #000000 0%, #114466 50%, #185F8F 100%);
+background: linear-gradient(to right, #000000 0%, #114466 50%, #185F8F 100%);
+    color: #F2F4FF;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#profilePic {
+    max-width: 350px;
+    max-height: 500px;
+    border-radius: 100%;
+    border: 1px solid #F2F4FF;
+    float:left;
+    position:relative;
+}
+
+#shortStatement {
+    font-size: 1rem;
+    background-color: #3B8EA5;
+    padding: 1rem 1rem;
+    float: left; 
+    border-radius: 10px;
+    margin: .1rem;
+}
+#work {
+    background-color: #F2F4FF;
+    color: #32292F;
+    padding: 1rem 1rem; 
+    float: left; 
+    border-radius: 10px;
+    margin: .1rem;
+}
+#personal{
+    background-color: #FF6700;
+    padding: 1rem 1rem; 
+    float: left; 
+    border-radius: 10px;
+    margin: .1rem;
+}
+#color5 {
+    background-color: #32292F;
+    padding: 1rem 1rem; 
+    float: left; 
+    border-radius: 10px;
+    margin: .1rem;
+}
+#color6 {
+    background-color: #51291E;
+    padding: 1rem 1rem; 
+    float: left; 
+    border-radius: 10px;
+    margin: .1rem;
+}
+
+#ph {
+    border: 1px solid #F2F4FF;
+    margin-top: 10rem;
 }
