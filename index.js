@@ -1,6 +1,4 @@
 console.log("Hello World");
 
-const button = document.querySelector("button");
+const buttons = document.querySelectorAll("button");
 
-button.addEventListener("mouseenter", () => button.style.borderColor = "white");
-button.addEventListener("mouseleave", () => button.style.borderColor = "");
