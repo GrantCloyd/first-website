@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Grant Cloyd</title>
 
@@ -18,32 +20,86 @@
 
 
         <nav>
-            <button class="button" type="button" id="shortStatement"> Short Statement?</button>
+            <button class="button" type="button" class="statement" id="shortStatement"> This Project </button>
 
 
-            <button class="button" type="button" id="work">about work background?</button>
+            <button class="button" type="button" id="work">Work Background</button>
 
 
-            <button class="button" type="button" id="personal"> about personal?</button>
+            <button class="button" type="button" id="personal">Personal Background</button>
 
 
-            <button class="button" type="button" id="color5"> theater pics?</button>
+            <button class="button" type="button" id="learningLog"> Learning Log</button>
 
 
-            <button class="button" id="color6"> build something interactive?</button>
+            <button class="button" id="interactive"> build something interactive?</button>
         </nav>
 
     </header>
-    <!-- <img id="profilePic" src="./Images/GCloydSmaller.jpg" alt="profile pic"> -->
-
-
-    <h2>Short Statement</h2>
-    <p>Here are some words about me and somethings that I should say</p>
 
 
 
+    <div class="spacer">
+        <div id="statementText">
+            <h2>What is this?</h2>
+            <p>Hello, I'm Grant Cloyd, and this is a final project for pre-work in advance of attending a coding
+                bootcamp, Flatiron School, for
+                software engineering. I will
+                be part of their DC cohort from May-August of 2021. As such, I am sure it will be riddled with problems
+                that will make me cringe at a later time. Here's to learning!</p>
+        </div>
+    </div>
+    <div class="spacer">
+        <div id="workText">
+            <h2>Work Background</h2>
+            <p>Here are some words about my work background</p>
+        </div>
+    </div>
+    <div class="spacer">
+        <div id="personalText">
+            <h2>Personal</h2>
+            <p> Here are some things so that I don't sound like a serial killer</p>
+        </div>
+    </div>
+    <div class="spacer">
+        <div id="learningText">
+            <h2>Learning Log</h2>
+            <h4>4.16.2021</h4>
+            <p>So because this is the first webpage that I am building from scratch, I figure this might be a good
+                place to explain some of the things that I'm learning while putting this together in anticipation of
+                starting with Flatiron. </p>
+            <p> One of the first little quirks I ran into was while working with CSS to style the buttons. In this case,
+                the
+                buttons included the series at top of the page (Work, Personal, Etc), and the image buttons in the
+                contact
+                section on the bottom.</p>
+            <p>Part of what I was hoping to achieve was a certain amount of consistency in the hover effect, while
+                needing
+                to have different
+                measures such as height and width maintained. So, my thought was to add the class of buttons to the
+                profile
+                images, which led to some interesting side effects. </p>
+            <p> As this this is the first time I've tried using multiple classes on a single HTML element, I was able to
+                see the way that the cascade components are 'read' by the browser very quickly. As I had placed my
+                images tag above my buttons tag, my image quickly shifted into square buttons due to the padding and
+                spacing change. They
+                were no longer affected by my border-radius which turned them into a circle and were instead sqaure
+                images with a fair amount of padding.
+            </p>
+            <p> I admit, I came to somewhat like the style while I was working on other components. It certainly didn't
+                look professional, but the consistency of the hover effects were pretty nice. It wasn't until later that
+                the simple solution occurred to me: put the images class below the button class and you can solve your
+                problem as the cascade over-writes itself as it moves through the document. Immediately, I could have
+                the styling for both sets of buttons and the same hover effect.</p>
+        </div>
+    </div>
+    <div class="spacer">
+        <div id="interactiveText">
+            <h2>Interactive</h2>
+            <p>Something totally sweet (highly unlikely)</p>
+        </div>
 
-
+    </div>
 
 
     <footer id="footer">
@@ -54,7 +110,8 @@
         <div><a href="https://github.com/GrantCloyd"><img src="./Images/GCloydSmaller.jpg" target="_top"
                     alt="github picture" title="Check out my GitHub!" class="profilePic button"></a></div>
         <div><a href="https://www.linkedin.com/in/grant-cloyd"><img src="./Images/grantcloydCROPPED.jpg" target="_top"
-                    alt="linked-in picture" title="Connect on Linked-In!" class="profilePic button"></a></div>
+                    alt="linked-in picture" title="Connect on Linked-In!" id="circleImg" class="profilePic button"></a>
+        </div>
         <div><a href="https://twitter.com/grantcloyd1"><img src="./Images/grantImage.jpg" target="_top"
                     alt="twitter picture" title="Connect on Twitter!" class="profilePic button"></a></div>
         <hr>
