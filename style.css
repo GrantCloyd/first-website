@@ -27,6 +27,8 @@ h1 {
     padding: 1rem;
     display:inline-block;
     font-size: 3rem;
+    color:white;
+     
 }
 
 h2 {
@@ -102,7 +104,7 @@ p {
  }
 
 #contactBtn {
-    background: #185F8F;
+    background: #333;
 
     }
 
@@ -147,8 +149,9 @@ h3{
 }
 
 #footer{ 
-    margin: 0 auto;
+    background-color: #333;
+    width: 100%;
     display:-webkit-inline-flex;
     display: inline-flex;
     text-align: center;
-}
+    }
