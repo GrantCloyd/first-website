@@ -15,7 +15,12 @@ const calcMaker = () => {
             newButton.addEventListener("click", () => {
                 alert(`${newButton.innerHTML}`)
             });
-        } else {
+        } else if (mathSymbols[i] === "Cl") {
+            newButton.addEventListener("click", () => {
+                alert(`Cleared!`)
+            });
+        }
+        else {
             newButton.addEventListener("click", function () {
                 alert(`Math`);
             });
