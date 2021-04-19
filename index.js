@@ -10,11 +10,16 @@ Object.assign(calcScreen,
         value: null,
         title: "screen",
         id: "screen",
-        disabled: "true"
+        disabled: "true",
+        storedValue1: null,
+        storedValue2: null,
+        mathMethod: null,
     })
 
 calcLocation.appendChild(calcScreen);
 const mathSymbols = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "-", "+", "*", "/", "=", "Cl"];
+
+
 
 const calcMaker = () => {
     let i = 0;
@@ -32,11 +37,33 @@ const calcMaker = () => {
             newButton.addEventListener("click", () => {
                 alert(`Cleared!`)
                 calcScreen.value = null;
+                calcScreen.storedValue1 = null;
+                calcScreen.storedValue2 = null;
+                calcScreen.mathMethod = null;
             });
         }
+        else if (mathSymbols[i] === "=") {
+            newButton.addEventListener("click", () => {
+                calcScreen.storedValue2 = calcScreen.value;
+                calcScreen.value = Number(calcScreen.storedValue1) + Number(calcScreen.storedValue2);
+                //only works for + currently - need to build "+", "-", "*", "/" functionality onto button
+            })
+        }
         else {
+            newButton.value = mathSymbols[i];
             newButton.addEventListener("click", function () {
-                alert(`Math`);
+                calcScreen.storedValue1 = calcScreen.value;
+                console.log(calcScreen.storedValue1);
+                calcScreen.value = null;
+                switch (mathSymbols[i]) {
+                    case "-":
+                        calcScreen.mathMethod = "subtract";
+                        break;
+                    case "+":
+                        calcScreen.mathMethod = "add";
+                        console.log(calcScreen.mathMethod);
+                        break;
+                }
             });
         }
         calcLocation.appendChild(newButton);
