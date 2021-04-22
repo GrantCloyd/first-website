@@ -61,7 +61,7 @@ p {
     background-color: black;
     color: #F2F4FF;
     transition: .4s;
-    opacity: .85;
+    opacity: .9;
     display: inline-table;
 }
 
@@ -73,8 +73,27 @@ p {
 
 #screen {
    padding: 1.5rem;
+   font-size: 1.2rem;
    color:black;
- 
+}
+
+#insultText {
+    font-family: 'Tangerine', sans-serif;
+    font-weight: 700;
+    padding: 2rem;
+    font-size: 2.2rem;
+    background-color: white;
+    width: 85%;
+    text-align: center;
+    
+    margin-bottom: 10px;
+    
+}
+
+#insultButton{
+    font-family: 'Tangerine', sans-serif;
+    font-size: 1.4rem;
+    background-color: #114466; 
 }
 
 .profilePic {
