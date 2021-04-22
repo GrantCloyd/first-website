@@ -80,12 +80,12 @@ p {
 #insultText {
     font-family: 'Tangerine', sans-serif;
     font-weight: 700;
-    padding: 2rem;
+    padding: 2rem 2.5rem;
     font-size: 2.2rem;
     background-color: white;
-    width: 85%;
+    width: 90%;
     text-align: center;
-    
+    margin-left: -10px;
     margin-bottom: 10px;
     
 }
