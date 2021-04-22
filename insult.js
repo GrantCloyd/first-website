@@ -44,7 +44,10 @@ function insulterizer(adj1Array, adj2Array, nounArray) {
 //building the location and objects to place the features
 const insultLocation = document.querySelector('#insulter')
 const insultDiv = document.createElement('div');
-Object.assign(insultDiv, { id: "insultWrapper" });
+Object.assign(insultDiv, {
+    id: "insultWrapper",
+    display: "flex",
+});
 insultLocation.appendChild(insultDiv);
 const hr = document.createElement('hr');
 insultDiv.appendChild(hr);

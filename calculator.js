@@ -12,7 +12,7 @@ Object.assign(calcScreen,
         type: "text",
         value: null,
         title: "screen",
-        id: "screen",
+        id: "mathScreen",
         disabled: "true",
         storedValue1: null,
         storedValue2: null,
@@ -55,8 +55,8 @@ function calcMaker(arr) {
             newButton.id = "equalSign";
             newButton.addEventListener("click", () => {
                 calcScreen.storedValue2 = calcScreen.value;
-                //not sure if this is the best approach, in building this I built myself into a corner and googled and found eval 
-                //to solve the problem as it evaluates a string passed to it
+                // not sure if this is the best approach, in building this I built myself into a corner and googled and found eval() 
+                // to solve the problem as it evaluates a string passed to it
                 calcScreen.value = eval(`${calcScreen.storedValue1} ${calcScreen.mathMethod} ${calcScreen.storedValue2}`);
                 calcScreen.storedValue1 = null;
                 calcScreen.storedValue2 = null;
