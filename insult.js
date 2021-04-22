@@ -22,8 +22,9 @@ const insultSet3 = [
     "ratsbane", "whey-face", "wagtail", "scut", "skainsmate", "strumpet", "varlot", "vassal"
 ];
 
-//generates 3 random numbers that cap based on the length of the first array and pushes the genearted numbers to a new array
-// currently insults need to be added in threes - one to each array at a time - but they can be added to the array without needing to tweak the function   
+//generates 3 random numbers that is measured by the length of the first array and pushes the genearted numbers to a new array
+// currently insults need to be added in threes - one to each array at a time to prevent an undefined being possible 
+//- but they can be added to the arrays without needing to tweak the function   
 function randomizer(n) {
     let randomNumbers = [];
     for (let i = 0; i < 3; i++) {
@@ -70,7 +71,3 @@ insultDiv.appendChild(insultButton);
 
 
 console.log(insulterizer(insultSet1, insultSet2, insultSet3))
-
-console.log(insultSet1.length)
-console.log(insultSet2.length)
-console.log(insultSet3.length)
