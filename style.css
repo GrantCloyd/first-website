@@ -68,12 +68,13 @@ p {
 .mathButton {
     width: 25%;
     margin: 10px;
-   
+    border: 1px solid
 }
 
 #screen {
-    padding: 1rem;
+   padding: 1.5rem;
    color:black;
+ 
 }
 
 .profilePic {
