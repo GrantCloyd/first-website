@@ -3,6 +3,8 @@ const textBox = document.querySelector('#toDoText');
 const toDoList = document.querySelector('#toDoWrapper');
 
 
+
+
 const addItem = (text) => {
     if (text === "") {
         textBox.style.backgroundColor = "#F22B29";
@@ -13,12 +15,28 @@ const addItem = (text) => {
         Object.assign(newElement, {
             innerText: [text],
             classList: "toDoItems",
+            id: [text]
         });
-        newElement.addEventListener("click", () => newElement.toggleAttribute(classList));
+
+        newElement.addEventListener("click", () => {
+            newElement.classList = "toDoItemsDone";
+        });
         textBox.value = null;
         toDoList.appendChild(newElement);
     }
 }
+
+
+// //function doneToggele() {
+// if (this.classList === "toDoItems") {
+//     this.toggleAttribute(this.classList = "toDoItemsDone");
+// }
+// if (this.classList === "toDoItemsDone") {
+//     this.toggleAttribute(this.classList = "toDoItems");
+// }
+// }
+
+
 
 addButton.addEventListener("click", () => addItem(textBox.value));
 
