@@ -74,3 +74,19 @@ insultDiv.appendChild(insultButton);
 
 
 console.log(insulterizer(insultSet1, insultSet2, insultSet3))
+
+
+//hide functionality for the learning log
+
+const hidden = document.querySelector("#hide");
+const dropDown = document.querySelector('#dropDown');
+
+const hide = () => {
+    if (hidden.style.display === "none") {
+        hidden.style.display = "block";
+    } else {
+        hidden.style.display = "none";
+    }
+}
+
+dropDown.addEventListener("click", () => hide());
