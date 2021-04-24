@@ -4,7 +4,7 @@ const toDoList = document.querySelector('#toDoWrapper');
 
 
 
-
+//add new to-do item, functionality, and append 
 const addItem = (text) => {
     if (text === "") {
         textBox.style.backgroundColor = "#F22B29";
@@ -15,31 +15,23 @@ const addItem = (text) => {
         Object.assign(newElement, {
             innerText: [text],
             classList: "toDoItems",
-            id: [text]
-        });
-        newElement.addEventListener("click", () => {
-            if (newElement.classList == "toDoItems") {
-                newElement.classList.replace("toDoItems", "toDoItemsDone");
-                setTimeout(() => newElement.remove(), 900);
-            } else {
-                newElement.classList = "toDoItems";
-            }
 
         });
+        newElement.addEventListener("click", () => strikeThrough(newElement));
         textBox.value = null;
         toDoList.appendChild(newElement);
     }
 }
 
-
-// //function doneToggele() {
-// if (this.classList === "toDoItems") {
-//     this.toggleAttribute(this.classList = "toDoItemsDone");
-// }
-// if (this.classList === "toDoItemsDone") {
-//     this.toggleAttribute(this.classList = "toDoItems");
-// }
-// }
+//strike through and remove to-do item function
+function strikeThrough(element) {
+    if (element.classList == "toDoItems") {
+        element.classList.replace("toDoItems", "toDoItemsDone");
+        setTimeout(() => element.remove(), 900);
+    } else {
+        element.classList = "toDoItems";
+    }
+}
 
 
 

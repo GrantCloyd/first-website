@@ -204,7 +204,7 @@ h3{
     text-align: center;
     }
 
-/* for toDo  styling
+/* for To Do List  styling
  */
 
 .toDoItems {
@@ -214,6 +214,11 @@ h3{
     width: 50%;
     margin: 0 auto;
     border-radius: 35%;
+}
+
+.toDoItems:hover{
+    cursor: pointer;
+    font-style: oblique;
 }
 
 .toDoItemsDone {
