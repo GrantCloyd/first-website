@@ -218,10 +218,10 @@ h3{
 
 .toDoItemsDone {
    text-decoration: line-through;
-   font-size: 1rem; 
-    border: 5px ridge white;
+   font-size: .9rem; 
+    border: 3px dotted white;
     padding: .3rem;
-    width: 50%;
+    width: 45%;
     margin: 0 auto;
     border-radius: 35%;
 }

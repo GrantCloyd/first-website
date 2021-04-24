@@ -19,7 +19,14 @@ const addItem = (text) => {
         });
 
         newElement.addEventListener("click", () => {
-            newElement.classList = "toDoItemsDone";
+            if (newElement.classList == "toDoItems") {
+                newElement.classList.replace("toDoItems", "toDoItemsDone");
+                remover(newElement);
+
+            } else {
+                newElement.classList = "toDoItems";
+            }
+
         });
         textBox.value = null;
         toDoList.appendChild(newElement);
@@ -39,4 +46,10 @@ const addItem = (text) => {
 
 
 addButton.addEventListener("click", () => addItem(textBox.value));
+
+const remover = (element) => {
+    if (element.classList == "toDoitemsDone") {
+        setTimeout(() => newElement.remove(), 1500);
+    }
+}
 
