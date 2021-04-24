@@ -15,22 +15,23 @@ const addItem = (text) => {
         Object.assign(newElement, {
             innerText: [text],
             classList: "toDoItems",
-
         });
         newElement.addEventListener("click", () => strikeThrough(newElement));
         textBox.value = null;
+        const time = new Date;
+        newElement.append(` --- added on ${time.toDateString()}`)
         toDoList.appendChild(newElement);
     }
 }
 
+const finishStatements = ["Yay!", "Crushed it!", "Congrats!", "Way to finish that!", "Hot diggity damn!", "Take your time-off!", "Aww yeah!",]
+
 //strike through and remove to-do item function
 function strikeThrough(element) {
-    if (element.classList == "toDoItems") {
-        element.classList.replace("toDoItems", "toDoItemsDone");
-        setTimeout(() => element.remove(), 900);
-    } else {
-        element.classList = "toDoItems";
-    }
+    element.classList.replace("toDoItems", "toDoItemsDone")
+    element.innerText = finishStatements[Math.floor(Math.random() * finishStatements.length)]
+    setTimeout(() => element.remove(), 900);
+
 }
 
 
