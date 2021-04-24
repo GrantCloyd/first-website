@@ -17,12 +17,10 @@ const addItem = (text) => {
             classList: "toDoItems",
             id: [text]
         });
-
         newElement.addEventListener("click", () => {
             if (newElement.classList == "toDoItems") {
                 newElement.classList.replace("toDoItems", "toDoItemsDone");
-                remover(newElement);
-
+                setTimeout(() => newElement.remove(), 900);
             } else {
                 newElement.classList = "toDoItems";
             }
@@ -46,10 +44,4 @@ const addItem = (text) => {
 
 
 addButton.addEventListener("click", () => addItem(textBox.value));
-
-const remover = (element) => {
-    if (element.classList == "toDoitemsDone") {
-        setTimeout(() => newElement.remove(), 1500);
-    }
-}
 
