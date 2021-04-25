@@ -153,6 +153,9 @@ h3{
     padding: 1.05rem 1rem;
 }
 
+h4{
+    text-decoration: underline 1px white;
+}
 
 
 #statementText {
@@ -167,15 +170,23 @@ h3{
     padding: 1rem;
    }
 
-   #dropDown {
-       width: 1.2rem;
-       height:1.2rem;
+   .dropDown {
+       width: 2rem;
+       height:2rem;
        float:right;
-       
+       margin-top:0;
+   }
+   #hideWork{
+    display:none;
+    
    }
 
-   #hide {
+   #hideLearn  {
      display:none;
+   }
+
+   .transition {
+       transition: linear 1s;
    }
    
 #personalText {
@@ -207,13 +218,17 @@ h3{
 /* for To Do List  styling
  */
 
+#toDoText {
+    margin:10px auto;
+}
+
 .toDoItems {
     font-size: 1rem; 
     border: 10px ridge white;
     background-color:black;
     padding: .3rem;
     width: 50%;
-    margin: 0 auto;
+    margin: 5px auto;
     border-radius: 35%;
 }
 

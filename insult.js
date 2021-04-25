@@ -76,17 +76,21 @@ insultDiv.appendChild(insultButton);
 console.log(insulterizer(insultSet1, insultSet2, insultSet3))
 
 
-//hide functionality for the learning log
+//hide functionality for the learning/work log
 
-const hidden = document.querySelector("#hide");
-const dropDown = document.querySelector('#dropDown');
+const hiddenL = document.querySelector("#hideLearn");
+const hiddenW = document.querySelector('#hideWork');
+const dropDownLearning = document.querySelector('#learningDropDown');
+const dropDownWork = document.querySelector('#workDropDown');
 
-const hide = () => {
+const hide = (hidden) => {
     if (hidden.style.display === "none") {
         hidden.style.display = "block";
+        hidden.classList = "transition";
     } else {
         hidden.style.display = "none";
     }
 }
 
-dropDown.addEventListener("click", () => hide());
+dropDownLearning.addEventListener("click", () => hide(hiddenL));
+dropDownWork.addEventListener("click", () => hide(hiddenW));

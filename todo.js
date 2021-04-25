@@ -30,7 +30,7 @@ const finishStatements = ["Yay!", "Crushed it!", "Congrats!", "Way to finish tha
 function strikeThrough(element) {
     element.classList.replace("toDoItems", "toDoItemsDone")
     element.innerText = finishStatements[Math.floor(Math.random() * finishStatements.length)]
-    setTimeout(() => element.remove(), 900);
+    setTimeout(() => element.remove(), 1200);
 
 }
 

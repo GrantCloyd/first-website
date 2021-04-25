@@ -55,32 +55,49 @@
     </div>
     <div class="spacer">
         <div id="workText">
+            <img src="Images/dropDown.png" class="dropDown" id="workDropDown">
             <h2>Work Background</h2>
-            <p>I studied Theatre, Film, and Media Studies at St. Mary's College of Maryland and started my professional
-                life as an actor. Beyond my undergraduate work, I receieved a graduate degree from Catholic University
-                of America for Acting, and worked professionally around the DC theater scene for over a decade. My work
-                included
-                touring one person shows and even taking a production to Edinburgh as part of it's international fringe
-                festival.</p>
-            <p>In addition to stage work, I spent a lot of time working as a standardized patient (often referred to as
-                an SP) - someone
-                who is
-                trained to portray a patient coming in with
-                a medical concern to help teach medical students history taking, physical exam, and communication
-                skills. In 2015 I took a job as a full time trainer at a military medical school
-                and stopped performing as an SP and started training SPs. This eventually led to me being recruited to
-                help open an SP program for a new medical school in Fort Worth as the Associate Director of SP
-                Education. While working at the school, I also began studying for a second master's degree and was
-                halfway
-                through an Education in Curriculum Studies program when I realized I needed to change careers and change
-                course because this
-                was not what I wanted to do be doing anymore.
-            </p>
-            <p> While working at the medical school I became more heavily involved in the technical and
-                logistical components of simulation which, in turn, led to more interest in technology and ultimately
-                being bitten
-                by the coding bug. I am beyond excited to
-                switch into this new field and can't wait to get started!</p>
+            <div id="hideWork">
+                <p>I studied Theatre, Film, and Media Studies at St. Mary's College of Maryland and started my
+                    professional
+                    life as an actor. Beyond my undergraduate work, I receieved a graduate degree from Catholic
+                    University
+                    of America for Acting, and worked professionally around the DC theater scene for over a decade. My
+                    work
+                    included
+                    touring one person shows and even taking a two person show to Edinburgh as part of it's
+                    international
+                    fringe
+                    festival.</p>
+                <p>In addition to stage work, I spent a lot of time working as a standardized patient (often referred to
+                    as
+                    an SP) - someone
+                    who is
+                    trained to portray a patient coming in with
+                    a medical concern to help teach medical students history taking, physical exam, and communication
+                    skills before they enter clinical settings. In 2015 I took a job as a full time trainer at a
+                    military
+                    medical school
+                    and stopped performing as an SP and started training them. This eventually led to me being recruited
+                    to
+                    help open an SP program for a new medical school in Fort Worth, Texas as the Associate Director of
+                    SP
+                    Education. While working at the school, I also began studying for a second master's degree and was
+                    halfway
+                    through an Education in Curriculum Studies program when I realized I needed to change careers and
+                    change
+                    course because I realized that this
+                    was not what I wanted to do be doing anymore.
+                </p>
+                <p> While working at the medical school I became more heavily involved in the technical and
+                    logistical components of simulation which, in turn, led to more interest in technology and
+                    ultimately
+                    being bitten
+                    by the coding bug. The power of automation, connection, and innovation that coding can provide is
+                    truly
+                    amazing and I wish that I had tried it sooner. I am beyond excited to
+                    switch into this new field and can't wait to get started at Flatiron!</p>
+            </div>
         </div>
     </div>
     <div class="spacer">
@@ -88,18 +105,18 @@
             <h2>Personal Background</h2>
 
             <p> I was born in Buffalo, NY but spent much of my life around the DMV area having lived in Virgina, DC,
-                or Maryland for twenty five years. I currently live in Fort Worth, TX after having moved here in 2018. I
+                or Maryland for over twenty years. I currently live in Fort Worth, TX and have been here since 2018. I
                 live with my
-                wife, Ann, who is a YA horror author, and our two cats, Ollie and Sophie.</p>
+                wife, Ann, who is a young adult horror author, and our two cats, Ollie and Sophie.</p>
         </div>
     </div>
     <div class="spacer">
         <div id="learningText">
-
+            <img src="Images/dropDown.png" class="dropDown" id="learningDropDown">
             <h2>Learning Log</h2>
-            <img src="Images/dropDown.png" id="dropDown">
 
-            <div id="hide">
+
+            <div id="hideLearn">
                 <h4>4.16.2021</h4>
                 <p>So because this is my first webpage, I figure this section might be a good
                     place to explain some of the things that I'm learning while putting this together. </p>
@@ -134,6 +151,47 @@
                     problem as the cascade over-writes itself as it moves through the document. Immediately, I could
                     have
                     the styling for both sets of buttons and the same hover effect.</p>
+                <h4>4.25.2021</h4>
+                <p>While working on the JavaScript functionality of this page, one data structure that I have leaned
+                    heavily on for all three of my projects
+                    has been arrays. The ability to feed information into a function behind the scenes is truly
+                    invaluable and something that I had not grasped fully while simply studying and learning to code by
+                    playing around
+                    with
+                    basic funcionality. This has given me a small taste of
+                    what it means when something is scalable.
+                </p>
+                <p> In the case of the calculator, I built a function which creates and appends all of the buttons by
+                    accessing the
+                    indices of an array
+                    and then assigns them object keys and values based on the expected functionality. While the
+                    makeCalc
+                    function took awhile to build (and it desperately needs to be broken up into
+                    smaller pieces for legibility and easier code maintenence), building it in this way allowed me to
+                    simply add two operators as strings (the
+                    exponent and modulo/remainder) to the array. With no additional code beyond that, including the
+                    function itself,
+                    they were immediately
+                    working and appended
+                    to the appropriate location. Similarly, after adding the decimal point to the array, it required
+                    only a single OR operator
+                    to be added to an if statement before it too was fully operational </p>
+                <p>While that was the most powerful example of array functionality and scaling I cam across, I also
+                    rediscovered it
+                    in
+                    smaller ways in the <a href="./todo.html">To-Do List</a> and the Shakespeare Insult Generator. In
+                    the case of the To-Do list, an array enables the 'success statements' to fire when an item is
+                    clicked. For the insult generator, it's an easy numbers game: three arrays, two functions, and one
+                    event listener allow for
+                    125,000 possible insults with very minimal code. In
+                    both cases, simply
+                    adding to the arrays and in no way touching any other text in the .js or .html files could expand
+                    the number of
+                    statements that could be generated and displayed to a user with a few keystrokes and git commands.
+                    Ultimately, I
+                    look forward to discovering the many ways that arrays are able to make functions scalable and
+                    adapatable to new features or increased capacities with ease.
+                </p>
             </div>
         </div>
     </div>
@@ -143,7 +201,8 @@
             <p> All of the screens, buttons, hr break, and functionality in this section have been created and added
                 entirely in
                 JavaScript (with some light CSS styling). For additional information and annotations, you can navigate
-                to the calculator.js file or the insult.js file in devtools.
+                to the calculator.js file or the insult.js file in devtools. I've also added a basic <a
+                    href="./todo.html">To-Do List</a>.
             </p>
             <h2 id="insulter"> Shakespearean Insult Generator</h2>
 
