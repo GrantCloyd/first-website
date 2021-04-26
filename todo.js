@@ -24,7 +24,7 @@ const addItem = (text) => {
     }
 }
 
-const finishStatements = ["Aww yeah!", "Crushed it!", "Nailed it!", "Congrats!", "Way to finish that!", "Hot diggity damn!", "Take your time-off!", "Did someone say party time?!"]
+const finishStatements = ["Aww yeah!", "Crushed it!", "Nailed it!", "Congrats!", "Way to finish that!", "Hot diggity damn!", "That nonsense is done!", "Did someone say party time?!"]
 
 //strike through and remove to-do item function
 function done(element) {
