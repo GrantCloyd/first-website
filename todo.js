@@ -16,7 +16,7 @@ const addItem = (text) => {
             innerText: [text],
             classList: "toDoItems",
         });
-        newElement.addEventListener("click", () => strikeThrough(newElement));
+        newElement.addEventListener("click", () => done(newElement));
         textBox.value = null;
         const time = new Date;
         newElement.append(` --- added on ${time.toDateString()}`)
@@ -24,10 +24,10 @@ const addItem = (text) => {
     }
 }
 
-const finishStatements = ["Yay!", "Crushed it!", "Congrats!", "Way to finish that!", "Hot diggity damn!", "Take your time-off!", "Aww yeah!",]
+const finishStatements = ["Aww yeah!", "Crushed it!", "Nailed it!", "Congrats!", "Way to finish that!", "Hot diggity damn!", "Take your time-off!", "Did someone say party time?!"]
 
 //strike through and remove to-do item function
-function strikeThrough(element) {
+function done(element) {
     element.classList.replace("toDoItems", "toDoItemsDone")
     element.innerText = finishStatements[Math.floor(Math.random() * finishStatements.length)]
     setTimeout(() => element.remove(), 1200);
@@ -35,6 +35,10 @@ function strikeThrough(element) {
 }
 
 
-
+//event listeners with the same function, one bound to enter key on the textbox, the other bound on the add button
 addButton.addEventListener("click", () => addItem(textBox.value));
-
+textBox.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        addItem(textBox.value);
+    }
+});
