@@ -185,10 +185,7 @@ h4{
      display:none;
    }
 
-   .transition {
-       transition: linear 1s;
-   }
-   
+  
 #personalText {
     background-color: #FF6700;;
     border: 1px solid white;
