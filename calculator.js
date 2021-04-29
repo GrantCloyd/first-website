@@ -22,12 +22,14 @@ Object.assign(calcScreen,
 calcLocation.appendChild(calcScreen);
 //array created/used to pass the neccessary button symbols to the arr parameter in calcMaker
 const mathSymbols = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, ".", "-", "+", "*", "/", "=", "**", "%", "Cl"];
-/*
-once the function is built, what's nice is that I can pass other javascript operators to the array and it adds it immediately 
- for example, in the original incarnation I did not have the exponent or modulo button - but after construction of the below function,
- just by adding the operator to the array as a string, they populate, append, and function immediately
- the addition of the decimal point required an or statement so that it functioned like a number button rather than an operator
-*/
+
+//functions to pass to switch case for the calculator
+const add = (x, y) => Number(x) + Number(y);
+const subtract = (x, y) => Number(x) - Number(y);
+const multiply = (x, y) => Number(x) * Number(y);
+const divide = (x, y) => Number(x) / Number(y);
+const power = (x, y) => Number(x) ** Number(y);
+const remainder = (x, y) => Number(x) % Number(y);
 
 function calcMaker(arr) {
     let i = 0;
@@ -54,10 +56,34 @@ function calcMaker(arr) {
         else if (mathSymbols[i] === "=") {
             newButton.id = "equalSign";
             newButton.addEventListener("click", () => {
+                if (calcScreen.storedValue1 === null) {
+                    alert(`Please enter a number and select an operation`)
+                }
                 calcScreen.storedValue2 = calcScreen.value;
-                // not sure if this is the best approach, in building this I built myself into a corner and googled and found eval() 
-                // to solve the problem as it evaluates a string passed to it
-                calcScreen.value = eval(`${calcScreen.storedValue1} ${calcScreen.mathMethod} ${calcScreen.storedValue2}`);
+                //switch case used once I learned that eval() has major vulnerability issues
+                switch (calcScreen.mathMethod) {
+                    case '+':
+                        calcScreen.value = add(calcScreen.storedValue1, calcScreen.storedValue2);
+                        break;
+                    case '-':
+                        calcScreen.value = subtract(calcScreen.storedValue1, calcScreen.storedValue2);
+                        break;
+                    case '*':
+                        calcScreen.value = multiply(calcScreen.storedValue1, calcScreen.storedValue2);
+                        break;
+                    case '/':
+                        calcScreen.value = divide(calcScreen.storedValue1, calcScreen.storedValue2);
+                        break;
+                    case '**':
+                        calcScreen.value = power(calcScreen.storedValue1, calcScreen.storedValue2);
+                        break;
+                    case '%':
+                        calcScreen.value = remainder(calcScreen.storedValue1, calcScreen.storedValue2);
+                        break;
+                }
+                // first solution -- much simpler, much more dangerous apparently
+                // calcScreen.value = eval(`${calcScreen.storedValue1} ${calcScreen.mathMethod} ${calcScreen.storedValue2}`);
+
                 calcScreen.storedValue1 = null;
                 calcScreen.storedValue2 = null;
             })
@@ -65,9 +91,13 @@ function calcMaker(arr) {
         else {
             newButton.value = mathSymbols[i];
             newButton.addEventListener("click", function () {
-                calcScreen.storedValue1 = calcScreen.value;
-                calcScreen.value = null
-                calcScreen.mathMethod = newButton.value;
+                if (calcScreen.value !== null) {
+                    calcScreen.storedValue1 = calcScreen.value;
+                    calcScreen.value = null
+                    calcScreen.mathMethod = newButton.value;
+                } else {
+                    alert(`Please enter a number`);
+                }
 
             });
         }
