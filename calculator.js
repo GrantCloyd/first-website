@@ -1,7 +1,6 @@
 console.log("Thank you for stopping by!");
 //setting a location for the calculator
 const calcLocation = document.querySelector("#interactiveText p");
-//for loop seemed excessive to create two hr elements
 const hr1 = document.createElement("hr");
 const hr2 = document.createElement("hr");
 calcLocation.appendChild(hr1);
@@ -44,6 +43,7 @@ function calcMaker(arr) {
             newButton.addEventListener("click", () => {
                 calcScreen.value += `${newButton.value}`;
             });
+            // Clear button
         } else if (mathSymbols[i] === "Cl") {
             newButton.addEventListener("click", () => {
                 calcScreen.value = null;
@@ -56,11 +56,12 @@ function calcMaker(arr) {
         else if (mathSymbols[i] === "=") {
             newButton.id = "equalSign";
             newButton.addEventListener("click", () => {
+                //error handling
                 if (calcScreen.storedValue1 === null) {
                     alert(`Please enter a number and select an operation`)
                 }
                 calcScreen.storedValue2 = calcScreen.value;
-                //switch case used once I learned that eval() has major vulnerability issues
+                //switch case utilizing previously declared functions
                 switch (calcScreen.mathMethod) {
                     case '+':
                         calcScreen.value = add(calcScreen.storedValue1, calcScreen.storedValue2);
@@ -81,7 +82,7 @@ function calcMaker(arr) {
                         calcScreen.value = remainder(calcScreen.storedValue1, calcScreen.storedValue2);
                         break;
                 }
-                // first solution -- much simpler, much more dangerous apparently
+                // original solution below -- much simpler, much more dangerous apparently due to eval() being a great vulnerability
                 // calcScreen.value = eval(`${calcScreen.storedValue1} ${calcScreen.mathMethod} ${calcScreen.storedValue2}`);
 
                 calcScreen.storedValue1 = null;
@@ -91,16 +92,20 @@ function calcMaker(arr) {
         else {
             newButton.value = mathSymbols[i];
             newButton.addEventListener("click", function () {
-                if (calcScreen.value !== null) {
+                //error handling
+                if (calcScreen.value == "" && calcScreen.mathMethod != "") {
+                    calcScreen.mathMethod = newButton.value;
+                }
+
+                else {
                     calcScreen.storedValue1 = calcScreen.value;
                     calcScreen.value = null
                     calcScreen.mathMethod = newButton.value;
-                } else {
-                    alert(`Please enter a number`);
                 }
 
             });
         }
+        //append and change the loop
         calcLocation.appendChild(newButton);
         i++;
     }
