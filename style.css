@@ -63,6 +63,7 @@ p {
     transition: .4s;
     opacity: .9;
     display: inline-table;
+    object-fit: cover; 
 }
 
 .mathButton {
