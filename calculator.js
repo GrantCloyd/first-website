@@ -1,5 +1,3 @@
-//test for gitpush
-
 console.log("Thank you for stopping by!");
 //setting a location for the calculator
 const calcLocation = document.querySelector("#interactiveText p");
