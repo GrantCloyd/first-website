@@ -55,7 +55,7 @@ insultDiv.appendChild(hr);
 //text box works similar to calculator screen
 const insultScreen = document.createElement('input');
 Object.assign(insultScreen, {
-    class: "button",
+    
     disabled: true,
     id: "insultText",
     value: '"By the pricking of my thumbs, something insulting this way comes"'
